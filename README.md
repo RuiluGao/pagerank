@@ -2,6 +2,7 @@
 
 1. Task 1, part 1:
 ```
+$ python3 pagerank.py --data=data/small.csv.gz --verbose
 DEBUG:root:computing indices
 DEBUG:root:computing values
 DEBUG:root:i=0 residual=0.2562914192676544
@@ -38,6 +39,7 @@ INFO:root:rank=5 pagerank=1.6917e-01 url=1
 
 2. Task 1, part 2:
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --search_query='corona'
 INFO:root:rank=0 pagerank=1.0038e-03 url=www.lawfareblog.com/lawfare-podcast-united-nations-and-coronavirus-crisis
 INFO:root:rank=1 pagerank=8.9224e-04 url=www.lawfareblog.com/house-oversight-committee-holds-day-two-hearing-government-coronavirus-response
 INFO:root:rank=2 pagerank=7.0390e-04 url=www.lawfareblog.com/britains-coronavirus-response
@@ -51,6 +53,7 @@ INFO:root:rank=9 pagerank=6.0187e-04 url=www.lawfareblog.com/livestream-house-ov
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --search_query='trump'
 INFO:root:rank=0 pagerank=5.7826e-03 url=www.lawfareblog.com/trump-asks-supreme-court-stay-congressional-subpeona-tax-returns
 INFO:root:rank=1 pagerank=5.2338e-03 url=www.lawfareblog.com/document-trump-revokes-obama-executive-order-counterterrorism-strike-casualty-reporting
 INFO:root:rank=2 pagerank=5.1297e-03 url=www.lawfareblog.com/trump-administrations-worrying-new-policy-israeli-settlements
@@ -64,6 +67,7 @@ INFO:root:rank=9 pagerank=3.4484e-03 url=www.lawfareblog.com/second-circuit-rule
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --search_query='iran'
 INFO:root:rank=0 pagerank=4.5746e-03 url=www.lawfareblog.com/praise-presidents-iran-tweets
 INFO:root:rank=1 pagerank=4.4174e-03 url=www.lawfareblog.com/how-us-iran-tensions-could-disrupt-iraqs-fragile-peace
 INFO:root:rank=2 pagerank=2.6928e-03 url=www.lawfareblog.com/cyber-command-operational-update-clarifying-june-2019-iran-operation
@@ -77,6 +81,7 @@ INFO:root:rank=9 pagerank=1.1463e-03 url=www.lawfareblog.com/israel-iran-syria-c
 ```
 3. Task 1, part 3:
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz
 INFO:root:rank=0 pagerank=2.8741e-01 url=www.lawfareblog.com/lawfare-job-board
 INFO:root:rank=1 pagerank=2.8741e-01 url=www.lawfareblog.com/masthead
 INFO:root:rank=2 pagerank=2.8741e-01 url=www.lawfareblog.com/litigation-documents-related-appointment-matthew-whitaker-acting-attorney-general
@@ -90,6 +95,7 @@ INFO:root:rank=9 pagerank=2.8741e-01 url=www.lawfareblog.com/our-comments-policy
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --filter_ratio=0.2
 INFO:root:rank=0 pagerank=3.4696e-01 url=www.lawfareblog.com/trump-asks-supreme-court-stay-congressional-subpeona-tax-returns
 INFO:root:rank=1 pagerank=2.9521e-01 url=www.lawfareblog.com/livestream-nov-21-impeachment-hearings-0
 INFO:root:rank=2 pagerank=2.9040e-01 url=www.lawfareblog.com/opening-statement-david-holmes
@@ -103,6 +109,7 @@ INFO:root:rank=9 pagerank=1.4240e-01 url=www.lawfareblog.com/lawfare-podcast-bon
 ```
 4. Task 1, part 4:
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose 
 DEBUG:root:computing indices
 DEBUG:root:computing values
 DEBUG:root:i=0 residual=1.3793821334838867
@@ -137,6 +144,7 @@ INFO:root:rank=9 pagerank=2.8741e-01 url=www.lawfareblog.com/our-comments-policy
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose --alpha=0.99999
 DEBUG:root:computing indices
 DEBUG:root:computing values
 DEBUG:root:i=0 residual=1.3845856189727783
@@ -165,6 +173,7 @@ INFO:root:rank=9 pagerank=2.8859e-01 url=www.lawfareblog.com/our-comments-policy
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose --filter_ratio=0.2
 DEBUG:root:computing indices
 DEBUG:root:computing values
 DEBUG:root:i=0 residual=1.2609827518463135
@@ -202,6 +211,7 @@ INFO:root:rank=9 pagerank=1.4240e-01 url=www.lawfareblog.com/lawfare-podcast-bon
 ```
 
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose --filter_ratio=0.2 --alpha=0.99999
 DEBUG:root:computing indices
 DEBUG:root:computing values
 DEBUG:root:i=0 residual=1.2827345132827759
@@ -904,6 +914,7 @@ INFO:root:rank=9 pagerank=1.6020e-02 url=www.lawfareblog.com/water-wars-sinking-
 
 5. Task 2, part 1:
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --filter_ratio=0.2 --personalization_vector_query='corona'
 INFO:root:rank=0 pagerank=6.3127e-01 url=www.lawfareblog.com/covid-19-speech-and-surveillance-response
 INFO:root:rank=1 pagerank=6.3124e-01 url=www.lawfareblog.com/lawfare-live-covid-19-speech-and-surveillance
 INFO:root:rank=2 pagerank=1.5947e-01 url=www.lawfareblog.com/chinatalk-how-party-takes-its-propaganda-global
@@ -918,6 +929,7 @@ INFO:root:rank=9 pagerank=7.2888e-02 url=www.lawfareblog.com/house-oversight-com
 
 6. Task 2, part 2:
 ```
+$ python3 pagerank.py --data=data/lawfareblog.csv.gz --filter_ratio=0.2 --personalization_vector_query='corona' --search_query='-corona'
 INFO:root:rank=0 pagerank=6.3127e-01 url=www.lawfareblog.com/covid-19-speech-and-surveillance-response
 INFO:root:rank=1 pagerank=6.3124e-01 url=www.lawfareblog.com/lawfare-live-covid-19-speech-and-surveillance
 INFO:root:rank=2 pagerank=1.5947e-01 url=www.lawfareblog.com/chinatalk-how-party-takes-its-propaganda-global
