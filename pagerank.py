@@ -104,8 +104,11 @@ class WebGraph():
 
         else:
             v = torch.zeros(n)
-            # FIXME: implement Task 2
-        
+            for i in range (n):
+                url = self._index_to_url(i)
+                if url_satisfies_query(url,query):
+                    v[i] = 1
+
         v_sum = torch.sum(v)
         assert(v_sum>0)
         v /= v_sum
@@ -123,6 +126,11 @@ class WebGraph():
         with torch.no_grad():
             n = self.P.shape[0]
 
+            # calculate a
+            nondangling_nodes = torch.sparse.sum(self.P,1).indices()
+            a = torch.ones([n,1])
+            a[nondangling_nodes] = 0
+
             # create variables if none given
             if v is None:
                 v = torch.Tensor([1/n]*n)
@@ -139,12 +147,15 @@ class WebGraph():
             x = xprev.detach().clone()
             for i in range(max_iterations):
                 xprev = x.detach().clone()
-
-                # compute the new x vector using Eq (5.1)
-                # FIXME: Task 1
-                # HINT: this can be done with a single call to the `torch.sparse.addmm` function,
-                # but you'll have to read the code above to figure out what variables should get passed to that function
-                # and what pre/post processing needs to be done to them
+                q = (alpha*x.t()@a + (1-alpha)) * v.t()
+                x = torch.sparse.addmm(
+                        q.t(),
+                        self.P.t(),
+                        x,
+                        beta=1,
+                        alpha=alpha
+                        )
+                x /= torch.norm(x)
 
                 # output debug information
                 residual = torch.norm(x-xprev)
