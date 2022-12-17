@@ -203,7 +203,7 @@ $ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose --filter_ratio=0.
  INFO:root:rank=9 ranking=1.4240e-01 url=www.lawfareblog.com/lawfare-podcast-bonus-edition-gordon-sondland-vs-committee-no-bull
 
 $ python3 pagerank.py --data=data/lawfareblog.csv.gz --verbose --filter_ratio=0.2 --alpha=0.99999
-     DEBUG:root:computing indices
+ DEBUG:root:computing indices
  DEBUG:root:computing values
  DEBUG:root:i=0 residual=1.2827345132827759
  DEBUG:root:i=1 residual=0.5695679783821106
